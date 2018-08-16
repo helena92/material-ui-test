@@ -12,13 +12,13 @@ export default class extends Component {
   getExercisesByMuscles() {
     return Object.entries(
       this.state.exercises.reduce((exercises, exercise) => {
-        const { muscles } = exercise
+        const { muscles } = exercise;
 
         exercises[muscles] = exercises[muscles]
           ? [...exercises[muscles], exercise]
           : [exercise]
 
-        return exercises
+        return exercises;
       }, {})
     )
   }

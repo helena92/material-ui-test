@@ -37,12 +37,15 @@ export default withStyles(styles)(class extends Component {
 
     handleChange = name => ({ target: { value } }) => {
         this.setState({
-            ...this.state.exercise,
-            [name]: value
+            exercise: {
+                ...this.state.exercise,
+                [name]: value
+            }
         })
     }
 
     handleSubmit = () => {
+        //to do validation
         const { exercise } = this.state;
         this.props.onCreate(
             {
